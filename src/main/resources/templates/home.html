@@ -33,7 +33,6 @@ Welcome to the MJ Enterprises home page!
 </div>
 
 
-
 <div sec:authorize="hasRole('ADMIN')">
     <br>
     <a th:href="@{/systems}">IT Systems Admin meeting</a>
@@ -43,6 +42,12 @@ Welcome to the MJ Enterprises home page!
 </p>
 
 <hr>
+
+<form th:action="@{/change-password}" method="GET">
+    <input type="submit" value="Change Password">
+</form>
+
+
 <form action="#" th:action="@{/logout}" method="POST">
 
     <input type="submit" value="Logout">
