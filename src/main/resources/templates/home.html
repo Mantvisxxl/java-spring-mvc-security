@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+
+<head>
+    <meta charset="UTF-8">
+    <title>MJ Enterprises Home View</title>
+</head>
+
+<body>
+<h2>MJ Enterprises Company Page</h2>
+<hr>
+Welcome to the MJ Enterprises home page!
+
+
+<!-- Display username and security roles -->
+
+<p>
+    User name: <span sec:authentication="principal.username"></span>
+    <br>
+    User roles: <span sec:authentication="principal.authorities"></span>
+</p>
+
+
+<p>
+    <a th:href="@{/leaders}">Leadership meeting</a>
+    (Only for managers)
+    <br>
+    <a th:href="@{/systems}">IT Systems Admin meeting</a>
+    (Only for admins)
+</p>
+
+<form action="#" th:action="@{/logout}" method="POST">
+
+        <input type="submit" value="Logout">
+
+</form>
+
+
+</body>
+
+</html>

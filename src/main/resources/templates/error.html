@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Error</title>
+</head>
+<body>
+
+Error:
+
+<p>
+    <span th:text="${status}"></span>
+    <br>
+    <span th:text="${error}"></span>
+    <br>
+    <span th:text="${message}"></span>
+</p>
+
+<br><br>
+<form th:action="@{/}">
+    <input type="submit" value="Return">
+</form>
+
+</body>
+</html>
