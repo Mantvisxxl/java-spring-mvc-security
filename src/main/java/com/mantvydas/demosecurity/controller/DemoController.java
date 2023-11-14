@@ -18,4 +18,15 @@ public class DemoController {
         return "leaders";
     }
 
+    @GetMapping("/systems")
+    public String showSystems() {
+
+        return "admins";
+    }
+
+    @GetMapping("/access-denied")
+    public String showAccessDenied() {
+
+        return "access-denied";
+    }
 }

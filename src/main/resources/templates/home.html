@@ -4,13 +4,15 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>MJ Enterprises Home View</title>
+    <title>MJ Enterprises Home Page</title>
 </head>
 
 <body>
 <h2>MJ Enterprises Company Page</h2>
+
 <hr>
 Welcome to the MJ Enterprises home page!
+<hr>
 
 
 <!-- Display username and security roles -->
@@ -23,16 +25,27 @@ Welcome to the MJ Enterprises home page!
 
 
 <p>
+
+<div sec:authorize="hasRole('MANAGER')">
+    <hr>
     <a th:href="@{/leaders}">Leadership meeting</a>
     (Only for managers)
+</div>
+
+
+
+<div sec:authorize="hasRole('ADMIN')">
     <br>
     <a th:href="@{/systems}">IT Systems Admin meeting</a>
     (Only for admins)
+</div>
+
 </p>
 
+<hr>
 <form action="#" th:action="@{/logout}" method="POST">
 
-        <input type="submit" value="Logout">
+    <input type="submit" value="Logout">
 
 </form>
 
